@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Edit Registration{% else %}Add Registration{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'registration_list' %}">Back to Registration List</a>
+</body>
+</html>

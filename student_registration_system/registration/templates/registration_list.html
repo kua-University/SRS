@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration List</title>
+</head>
+<body>
+    <h1>Registration List</h1>
+    <a href="{% url 'registration_create' %}">Add Registration</a>
+    <ul>
+        {% for registration in registrations %}
+            <li>
+                {{ registration.student }} registered for {{ registration.course }} 
+                <a href="{% url 'registration_edit' registration.pk %}">Edit</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

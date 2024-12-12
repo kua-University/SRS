@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enrollment List</title>
+</head>
+<body>
+    <h1>Enrollment List</h1>
+    <a href="{% url 'enrollment_create' %}">Add Enrollment</a>
+    <ul>
+        {% for enrollment in enrollments %}
+            <li>
+                {{ enrollment.student }} enrolled in {{ enrollment.course }} - Grade: {{ enrollment.grade }} 
+                <a href="{% url 'enrollment_edit' enrollment.pk %}">Edit</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

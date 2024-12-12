@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enrollment Form</title>
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Edit Enrollment{% else %}Add Enrollment{% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'enrollment_list' %}">Back to Enrollment List</a>
+</body>
+</html>
